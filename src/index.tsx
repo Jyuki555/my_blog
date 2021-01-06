@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
 import { ApolloProvider } from "@apollo/client";
 import { client } from "./apllo";
 import reportWebVitals from "./reportWebVitals";
+import "./assets/stylesheets/reset.css";
+import "./assets/stylesheets/index.css";
+import App from "./App";
 
 ReactDOM.render(
   <React.StrictMode>

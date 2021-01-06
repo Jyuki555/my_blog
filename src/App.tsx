@@ -1,7 +1,6 @@
 import React from "react";
 import logo from "./logo.svg";
 import { useQuery, gql } from "@apollo/client";
-import "./App.css";
 
 const query = gql`
   query {
