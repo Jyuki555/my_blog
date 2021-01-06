@@ -1,8 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import { useQuery, gql } from "@apollo/client";
+import "./App.css";
+
+const query = gql`
+  query {
+    postCollection {
+      items {
+        title
+        body
+      }
+    }
+  }
+`;
 
 function App() {
+  const { data } = useQuery(query);
+  console.log(data);
   return (
     <div className="App">
       <header className="App-header">
