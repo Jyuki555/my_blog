@@ -15,7 +15,7 @@ const query = gql`
 `;
 
 function App() {
-  const { loading, error, data } = useQuery(query);
+  const { data } = useQuery(query);
   console.log(data);
   return (
     <div className="App">
