@@ -2064,6 +2064,13 @@
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"
   integrity sha512-ce5d3q03Ex0sy4R14722Rmt6MT07Ua+k4FwDfdcToYJcMKNtRVQvJ6JCAPdAmAnbRb6CsX6aYb9m96NGod9uTw==
 
+"@types/react-burger-menu@^2.6.2":
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/@types/react-burger-menu/-/react-burger-menu-2.6.2.tgz#9de0f248cc192f04b021dcae377064ac9e006153"
+  integrity sha512-P9ekrqS7VYzAuesfPFE86OnCfcJGvLtSGzVJHg5O+MxQo/v08X1i1my2OIuMERV1taZV/+uAFM0jI+xla1cV+g==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-dom@^16.9.8":
   version "16.9.10"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.9.10.tgz#4485b0bec3d41f856181b717f45fd7831101156f"
