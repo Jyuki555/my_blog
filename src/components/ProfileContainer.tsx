@@ -1,13 +1,12 @@
 import React from "react";
+import MediaQuery from "../assets/MediaQuery";
 import { ProfileCard } from "./ProfileCard";
 import styled from "styled-components";
-
-type Props = {};
 
 const src =
   "https://www.wantedly.com/users/124648815/avatar?h=500&t=1594094626&w=500";
 
-export const ProfileContainer: React.FC<Props> = ({}) => {
+export const ProfileContainer: React.FC = () => {
   return (
     <ProfileCardContainer>
       <SelfIntroduction>
@@ -48,6 +47,11 @@ const ProfileCardContainer = styled.div`
   font-family: impact;
   font-weight: bold;
   font-size: 1.5rem;
+  @media screen and (max-width: ${MediaQuery.Tablet}px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const IntroductionCard = styled.div`
