@@ -28,6 +28,6 @@ const PageWithSideNavi = styled.div`
 
 const Content = styled.div`
   height: 100vh;
-  padding: 80px 1.5rem;
+  padding: 120px 1.5rem 80px 1.5rem;
   overflow-y: scroll;
 `;
