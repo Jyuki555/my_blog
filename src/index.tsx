@@ -4,6 +4,7 @@ import { ApolloProvider } from "@apollo/client";
 import { client } from "./apllo";
 import reportWebVitals from "./reportWebVitals";
 import "./assets/stylesheets/reset.css";
+import "./assets/stylesheets/burgerMenu.css";
 import "./assets/stylesheets/index.css";
 import App from "./App";
 
