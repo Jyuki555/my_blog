@@ -17,6 +17,7 @@ const Container = styled.div`
   right: 0;
   left: 0;
   top: 0;
+  z-index: 10;
   text-align: center;
   min-height: 70px;
   background-color: #313a46;

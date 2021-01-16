@@ -4,11 +4,17 @@ import LocalAirportIcon from "@material-ui/icons/LocalAirport";
 import SettingsIcon from "@material-ui/icons/Settings";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import TwitterIcon from "@material-ui/icons/Twitter";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Navigation = [
   { path: "/", key: "home", text: "ほ〜む", IconComponent: HomeIcon },
-  { path: "/", key: "blog", text: "ぶろぐ", IconComponent: LocalAirportIcon },
+  {
+    path: "/blog",
+    key: "blog",
+    text: "ぶろぐ",
+    IconComponent: LocalAirportIcon,
+  },
   {
     path: "/",
     key: "product",
@@ -29,7 +35,7 @@ export const GlobalNavigation = () => {
         {Navigation.map((navi) => (
           <NavigationListItem key={navi.key}>
             <navi.IconComponent />
-            <LinkName>{navi.text}</LinkName>
+            <LinkName to={navi.path}>{navi.text}</LinkName>
           </NavigationListItem>
         ))}
       </NavigationList>
@@ -63,7 +69,8 @@ const NavigationListItem = styled.li`
   }
 `;
 
-const LinkName = styled.span`
+const LinkName = styled(Link)`
+  color: inherit;
   margin-left: 4px;
 `;
 

@@ -1,12 +1,29 @@
 import React from "react";
-import MediaQuery from "../assets/MediaQuery";
-import { ProfileCard } from "./ProfileCard";
+import { useQuery, gql } from "@apollo/client";
+import MediaQuery from "../../assets/MediaQuery";
 import styled from "styled-components";
 
 const src =
   "https://www.wantedly.com/users/124648815/avatar?h=500&t=1594094626&w=500";
 
+const PROFILE_QUERY = gql`
+  query GetProfileQuery($id: String!) {
+    person(id: $id) {
+      name
+      image {
+        url
+      }
+    }
+  }
+`;
+
 export const ProfileContainer: React.FC = () => {
+  const { data } = useQuery(PROFILE_QUERY, {
+    variables: { id: "3bsfhIqo05xkUEPQ1XYQpd" },
+  });
+
+  console.log(data);
+
   return (
     <ProfileCardContainer>
       <SelfIntroduction>
@@ -32,6 +49,7 @@ export const ProfileContainer: React.FC = () => {
           <LI>2018/4 ~ 2022/3 東京理科大学に入学</LI>
           <LI>2020/3 ~ 2021/1 Avilenでインターン </LI>
           <LI>2020/5 ~ 2020/8 Tech-Designで業務委託</LI>
+          <LI>2020/9 ~ 2020/10 Wantedlyでサマーインターン</LI>
           <LI>2020/10 ~ 2020/10 CyberAgent2DayHackに参加</LI>
         </UL>
       </HobbyIntroduction>
@@ -52,6 +70,7 @@ const ProfileCardContainer = styled.div`
     flex-direction: column;
     align-items: center;
   }
+  color: #313a46;
 `;
 
 const IntroductionCard = styled.div`
@@ -75,6 +94,9 @@ const SelfIntroduction = styled(IntroductionCard)`
 const SkillIntroduction = styled(IntroductionCard)`
   grid-row: 1 / 2;
   grid-column: 2 / 3;
+  & > ul {
+    height: 100%;
+  }
 `;
 
 const HobbyIntroduction = styled(IntroductionCard)`
@@ -103,3 +125,5 @@ const UL = styled.ul`
 const LI = styled.li`
   margin: 4px 0px;
 `;
+
+export default ProfileContainer;

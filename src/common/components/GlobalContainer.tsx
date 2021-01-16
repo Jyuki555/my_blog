@@ -27,10 +27,11 @@ const PageWithSideNavi = styled.div`
 `;
 
 const Content = styled.div`
+  position: relative;
   height: 100vh;
   padding: 120px 1.5rem 80px 1.5rem;
   overflow-y: scroll;
   @media screen and (max-width: ${MediaQuery.Tablet}px) {
-    padding: 180px 1.5rem;
+    padding: 100px 1rem;
   }
 `;

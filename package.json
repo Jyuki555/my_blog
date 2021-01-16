@@ -27,10 +27,12 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"react-scripts start\" \"yarn typegen:watch\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "typegen": "apollo client:codegen --target=typescript --globalTypesFile=src/types/globalTypes.ts",
+    "typegen:watch": "apollo client:codegen --target=typescript --globalTypesFile=src/types/globalTypes.ts --watch "
   },
   "eslintConfig": {
     "extends": [
@@ -51,6 +53,8 @@
     ]
   },
   "devDependencies": {
-    "@types/react-router-dom": "^5.1.7"
+    "@types/react-router-dom": "^5.1.7",
+    "apollo": "^2.32.1",
+    "concurrently": "^5.3.0"
   }
 }

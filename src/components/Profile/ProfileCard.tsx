@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-type Props = {};
-
-export const ProfileCard: React.FC<Props> = ({}) => {
+export const ProfileCard: React.FC = () => {
   return <Container></Container>;
 };
 
