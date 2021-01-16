@@ -21,13 +21,17 @@ const PageWithSideNavi = styled.div`
   @media screen and (max-width: ${MediaQuery.Tablet}px) {
     grid-template-columns: 1fr;
   }
-  @media screen and (min-width: ${MediaQuery.Tablet + 1}px) {
+  @media screen and (min-width: ${MediaQuery.Tablet}px) {
     grid-template-columns: 13.5rem 1fr;
   }
 `;
 
 const Content = styled.div`
+  position: relative;
   height: 100vh;
-  padding: 80px 1.5rem;
+  padding: 120px 1.5rem 80px 1.5rem;
   overflow-y: scroll;
+  @media screen and (max-width: ${MediaQuery.Tablet}px) {
+    padding: 100px 1rem;
+  }
 `;

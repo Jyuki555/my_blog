@@ -2,16 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { ApolloProvider } from "@apollo/client";
 import { client } from "./apllo";
+import { AppRouter } from "./AppRouter";
 import reportWebVitals from "./reportWebVitals";
 import "./assets/stylesheets/reset.css";
 import "./assets/stylesheets/burgerMenu.css";
 import "./assets/stylesheets/index.css";
-import App from "./App";
 
 ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <App />
+      <AppRouter />
     </ApolloProvider>
   </React.StrictMode>,
   document.getElementById("root")
