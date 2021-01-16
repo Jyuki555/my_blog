@@ -21,7 +21,7 @@ const PageWithSideNavi = styled.div`
   @media screen and (max-width: ${MediaQuery.Tablet}px) {
     grid-template-columns: 1fr;
   }
-  @media screen and (min-width: ${MediaQuery.Tablet + 1}px) {
+  @media screen and (min-width: ${MediaQuery.Tablet}px) {
     grid-template-columns: 13.5rem 1fr;
   }
 `;

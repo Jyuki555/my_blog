@@ -1,13 +1,17 @@
 import React from "react";
 import { gql, useQuery } from "@apollo/client";
-import { BlogCard } from "./BlogContent";
 import { ContentLoading } from "../../common/components/ContentLoading";
+import { BlogContent } from "./BlogContent";
+import { GetBlogQuery } from "./__generated__/GetBlogQuery";
 
 const BLOG_QUERY = gql`
   query GetBlogQuery {
     postCollection {
       items {
         title
+        content {
+          json
+        }
         thumbnail {
           title
           url
@@ -23,18 +27,14 @@ const BLOG_QUERY = gql`
 `;
 
 const BlogContainer: React.FC = () => {
-  const { loading, data } = useQuery(BLOG_QUERY);
-
-  console.log(data);
+  const { loading, data } = useQuery<GetBlogQuery>(BLOG_QUERY);
 
   return (
     <div>
       {loading && <ContentLoading />}
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
+      {data && data.postCollection && (
+        <BlogContent postCollection={data.postCollection} />
+      )}
     </div>
   );
 };

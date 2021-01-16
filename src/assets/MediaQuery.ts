@@ -15,7 +15,7 @@
 
 const MediaQuery = {
   Phone: 480,
-  Tablet: 760,
+  Tablet: 761,
   PC: 1200,
 };
 
