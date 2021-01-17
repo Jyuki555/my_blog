@@ -31,6 +31,7 @@ export interface GetBlogQuery_postCollection_items_tagsCollection {
 export interface GetBlogQuery_postCollection_items {
   __typename: "Post";
   title: string | null;
+  dateTime: any | null;
   content: GetBlogQuery_postCollection_items_content | null;
   thumbnail: GetBlogQuery_postCollection_items_thumbnail | null;
   tagsCollection: GetBlogQuery_postCollection_items_tagsCollection | null;

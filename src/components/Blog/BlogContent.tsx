@@ -28,9 +28,9 @@ export const BlogContent: React.FC<Props> = ({ postCollection }) => {
   );
 };
 
-const BlogCardConttainer = styled.section`
+const BlogCardConttainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(345px, 1fr));
   justify-items: center;
-  row-gap: 2em;
+  gap: 1.25em;
 `;
