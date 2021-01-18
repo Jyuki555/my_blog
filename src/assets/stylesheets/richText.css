@@ -1,0 +1,41 @@
+.document {
+  font-size: 1.25em;
+}
+
+.heading-1 {
+  color: black;
+}
+
+.heading-2 {
+  white-space: nowrap;
+  position: relative;
+  margin: 1em 0;
+  padding: 0 1rem;
+}
+
+.heading-2::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #efa335;
+  content: "";
+  display: block;
+  width: 0.25em;
+}
+
+.paragraph {
+  font-size: 1.025em;
+  line-height: 2;
+}
+
+.ul_list {
+  list-style: initial;
+}
+
+.embedded_asset {
+  width: 100%;
+  max-height: 400px;
+  max-width: 760px;
+  margin: 2em auto;
+}

@@ -1,12 +1,12 @@
 import React from "react";
-import { useQuery, gql } from "@apollo/client";
+import { gql } from "@apollo/client";
 import MediaQuery from "../../assets/MediaQuery";
 import styled from "styled-components";
 
 const src =
   "https://www.wantedly.com/users/124648815/avatar?h=500&t=1594094626&w=500";
 
-const PROFILE_QUERY = gql`
+export const PROFILE_QUERY = gql`
   query GetProfileQuery($id: String!) {
     person(id: $id) {
       name
@@ -18,12 +18,6 @@ const PROFILE_QUERY = gql`
 `;
 
 export const ProfileContainer: React.FC = () => {
-  const { data } = useQuery(PROFILE_QUERY, {
-    variables: { id: "3bsfhIqo05xkUEPQ1XYQpd" },
-  });
-
-  console.log(data);
-
   return (
     <ProfileCardContainer>
       <SelfIntroduction>

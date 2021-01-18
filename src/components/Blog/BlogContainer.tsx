@@ -9,6 +9,7 @@ const BLOG_QUERY = gql`
     postCollection {
       items {
         title
+        dateTime
         content {
           json
         }

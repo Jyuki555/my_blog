@@ -21,6 +21,10 @@ ul[role="list"],
 ol[role="list"] {
   list-style: none;
 }
+ul,
+ol {
+  list-style: none;
+}
 html {
   scroll-behavior: smooth;
 }

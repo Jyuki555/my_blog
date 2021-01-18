@@ -8,6 +8,11 @@ type RouteDef = RouteProps & NavigationProps;
 
 const routeDefs: RouteDef[] = [
   {
+    key: "blogView",
+    path: "/blog/:id",
+    component: React.lazy(() => import("./components/Blog/BlogViewContainer")),
+  },
+  {
     key: "blog",
     path: "/blog",
     component: React.lazy(() => import("./components/Blog/BlogContainer")),
