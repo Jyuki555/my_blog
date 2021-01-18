@@ -22,8 +22,6 @@ export const ProfileContainer: React.FC = () => {
     variables: { id: "3bsfhIqo05xkUEPQ1XYQpd" },
   });
 
-  console.log(data);
-
   return (
     <ProfileCardContainer>
       <SelfIntroduction>
