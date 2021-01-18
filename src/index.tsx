@@ -6,6 +6,7 @@ import { AppRouter } from "./AppRouter";
 import reportWebVitals from "./reportWebVitals";
 import "./assets/stylesheets/reset.css";
 import "./assets/stylesheets/burgerMenu.css";
+import "./assets/stylesheets/richText.css";
 import "./assets/stylesheets/index.css";
 
 ReactDOM.render(
