@@ -2,23 +2,11 @@ import React from "react";
 import { BlogTagContainer } from "./BlogTagContainer";
 import { GetBlogQuery_postCollection_items } from "./__generated__/GetBlogQuery";
 import { Link } from "react-router-dom";
+import dayjs from "dayjs";
 import styled from "styled-components";
 
 type Props = {
   content: GetBlogQuery_postCollection_items | null;
-};
-
-const DateFormater = (dateTime: string | null) => {
-  if (dateTime) {
-    var date = new Date(dateTime);
-    var year = date.getFullYear();
-    var month = date.getMonth() + 1;
-    var day = date.getDate();
-
-    return `${year}年${month}月${day}日`;
-  } else {
-    return null;
-  }
 };
 
 export const BlogCard: React.FC<Props> = ({ content }) => {
@@ -31,7 +19,7 @@ export const BlogCard: React.FC<Props> = ({ content }) => {
     <Card>
       <CardActionArea to="/">
         <CardMedia src={thumbnail?.url ? thumbnail.url : ""} />
-        <CardDateTime>{DateFormater(dateTime)}</CardDateTime>
+        <CardDateTime>{dayjs(dateTime).format("YYYY年MM月DD日")}</CardDateTime>
         <CardTitle>{title}</CardTitle>
       </CardActionArea>
       <CardTagActionArea>
