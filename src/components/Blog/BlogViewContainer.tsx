@@ -46,6 +46,8 @@ const BlogViewContainer: React.FC = () => {
     }
   );
 
+  console.log(data);
+
   if (!data) {
     return null;
   }
