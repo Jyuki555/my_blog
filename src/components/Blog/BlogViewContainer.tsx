@@ -77,13 +77,15 @@ const BlogViewContainer: React.FC = () => {
 
         if (!assetImg) {
           return null;
+        } else {
+          return (
+            <img
+              className="embedded_asset"
+              src={assetImg.url ? assetImg.url : ""}
+              alt={assetImg.title ? assetImg.title : ""}
+            />
+          );
         }
-        return (
-          <img
-            src={assetImg.url ? assetImg.url : ""}
-            alt={assetImg.title ? assetImg.title : ""}
-          />
-        );
       },
     },
   };

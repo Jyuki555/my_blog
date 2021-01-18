@@ -1,7 +1,9 @@
 .document {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: auto;
   padding: 1em;
+  font-family: monospace;
+  font-size: 1.25em;
   border-radius: 4px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -36,4 +38,11 @@
 
 .ul_list {
   list-style: initial;
+}
+
+.embedded_asset {
+  width: 100%;
+  max-height: 400px;
+  max-width: 760px;
+  margin: 2em auto;
 }
