@@ -3,24 +3,27 @@ import styled from "styled-components";
 
 type Product = {
   title: string;
-  url: string;
+  imgUrl: string;
   detail: string;
+  accessLink: string;
 };
 
 const productList: Product[] = [
   {
     title: "たすスケジュール",
-    url:
+    imgUrl:
       "https://images.ctfassets.net/1onbsimlancg/6dhhSsQpG551YkAh0xgZxm/e0228c56bfd36cc1e2a648dde1be7b00/____________________________2021-01-19_21.54.43.png",
     detail:
       "大学の課題を提出し忘れることが多々あったので、提出課題の管理アプリを開発した。現在は大学の利用規約により停止中....",
+    accessLink: "https://tus-schedule-pvs3h8yfl.vercel.app/",
   },
   {
     title: "今日の献立",
-    url:
+    imgUrl:
       "https://images.ctfassets.net/1onbsimlancg/5Was5BEgvay7A22T6EYOpS/205c0c20ba8402f1fbadd1a5deb5e7f1/____________________________2021-01-19_22.22.19.png",
     detail:
       "コロナの影響で家にいることが増えたので料理を覚えようと考え材料からレシピを選択できるアプリケーションを作成した。琉球料理や健康料理、おせち料理などレシピの種類は豊富である。",
+    accessLink: "https://qiita-app-621cc.web.app/home",
   },
 ];
 
@@ -28,11 +31,13 @@ const ProductContainer: React.FC = () => {
   return (
     <Container>
       {productList.map((product, idx) => (
-        <Content key={idx}>
-          <Image src={product.url} />
-          <Title>{product.title}</Title>
-          <Detail>{product.detail}</Detail>
-        </Content>
+        <Wrapper key={idx} href={product.accessLink} target="_blank">
+          <Content>
+            <Image src={product.imgUrl} />
+            <Title>{product.title}</Title>
+            <Detail>{product.detail}</Detail>
+          </Content>
+        </Wrapper>
       ))}
     </Container>
   );
@@ -53,6 +58,8 @@ const Content = styled.article`
   padding: 0px 8px
   border: solid 1px black;
 `;
+
+const Wrapper = styled.a``;
 
 const Image = styled.img`
   height: 230px;
