@@ -1,21 +1,18 @@
 import React from "react";
 import { GetBlogQuery_postCollection_items_tagsCollection } from "./__generated__/GetBlogQuery";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 type Props = {
   tagsCollection: GetBlogQuery_postCollection_items_tagsCollection;
 };
 
-export const BlogTagContainer: React.FC<Props> = ({ tagsCollection }) => {
+export const BlogTagCollection: React.FC<Props> = ({ tagsCollection }) => {
   const { items } = tagsCollection;
 
   return (
     <ChipGroup>
       {items.map((item, idx) => (
-        <Chip key={idx} to="/">
-          {item?.name}
-        </Chip>
+        <Chip key={idx}>{item?.name}</Chip>
       ))}
     </ChipGroup>
   );
@@ -28,7 +25,7 @@ const ChipGroup = styled.div`
   justify-content: flex-start;
 `;
 
-const Chip = styled(Link)`
+const Chip = styled.span`
   display: block;
   line-height: 1;
   letter-spacing: 1px;

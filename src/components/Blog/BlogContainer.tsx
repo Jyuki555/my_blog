@@ -4,7 +4,7 @@ import { ContentLoading } from "../../common/components/ContentLoading";
 import { BlogContent } from "./BlogContent";
 import { GetBlogQuery } from "./__generated__/GetBlogQuery";
 
-const BLOG_QUERY = gql`
+export const BLOG_QUERY = gql`
   query GetBlogQuery {
     postCollection {
       items {
