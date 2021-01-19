@@ -54,6 +54,7 @@ const CardTitle = styled.h2`
 const CardMedia = styled.img`
   height: 55%;
   width: 100%;
+  max-height: 230px;
 `;
 
 const CardTagArea = styled.div`
