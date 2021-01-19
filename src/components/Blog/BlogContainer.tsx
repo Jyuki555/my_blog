@@ -8,6 +8,7 @@ const BLOG_QUERY = gql`
   query GetBlogQuery {
     postCollection {
       items {
+        slug
         title
         dateTime
         content {
