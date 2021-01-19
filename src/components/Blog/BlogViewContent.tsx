@@ -9,10 +9,13 @@ import MediaQuery from "../../assets/MediaQuery";
 import styled from "styled-components";
 
 type Props = {
-  post: GetBlogViewQuery_post;
+  post: GetBlogViewQuery_post | null;
 };
 
 export const BlogViewContent: React.FC<Props> = ({ post }) => {
+  if (!post) {
+    return null;
+  }
   const block = post.content?.links.assets.block;
   const { title, tagsCollection, dateTime } = post;
 

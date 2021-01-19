@@ -30,6 +30,7 @@ export interface GetBlogQuery_postCollection_items_tagsCollection {
 
 export interface GetBlogQuery_postCollection_items {
   __typename: "Post";
+  slug: string | null;
   title: string | null;
   dateTime: any | null;
   content: GetBlogQuery_postCollection_items_content | null;

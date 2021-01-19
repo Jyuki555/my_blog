@@ -4,6 +4,7 @@ import {
   GetBlogViewQuery,
   GetBlogViewQueryVariables,
 } from "./__generated__/GetBlogViewQuery";
+import { useParams } from "react-router-dom";
 import { BlogViewContent } from "./BlogViewContent";
 
 const BLOG_VIEW_QUERY = gql`
@@ -25,10 +26,6 @@ const BLOG_VIEW_QUERY = gql`
           }
         }
       }
-      thumbnail {
-        title
-        url
-      }
       tagsCollection {
         items {
           name
@@ -39,10 +36,11 @@ const BLOG_VIEW_QUERY = gql`
 `;
 
 const BlogViewContainer: React.FC = () => {
+  const { id } = useParams<{ id: string }>();
   const { data } = useQuery<GetBlogViewQuery, GetBlogViewQueryVariables>(
     BLOG_VIEW_QUERY,
     {
-      variables: { id: "4PX6ASnAjLtSwIKkHz07J3" },
+      variables: { id },
     }
   );
 
@@ -50,7 +48,7 @@ const BlogViewContainer: React.FC = () => {
     return null;
   }
 
-  return <>{data.post && <BlogViewContent post={data.post} />}</>;
+  return <>{data && <BlogViewContent post={data.post} />}</>;
 };
 
 export default BlogViewContainer;

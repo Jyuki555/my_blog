@@ -35,12 +35,6 @@ export interface GetBlogViewQuery_post_content {
   links: GetBlogViewQuery_post_content_links;
 }
 
-export interface GetBlogViewQuery_post_thumbnail {
-  __typename: "Asset";
-  title: string | null;
-  url: string | null;
-}
-
 export interface GetBlogViewQuery_post_tagsCollection_items {
   __typename: "Tags";
   name: string | null;
@@ -56,7 +50,6 @@ export interface GetBlogViewQuery_post {
   title: string | null;
   dateTime: any | null;
   content: GetBlogViewQuery_post_content | null;
-  thumbnail: GetBlogViewQuery_post_thumbnail | null;
   tagsCollection: GetBlogViewQuery_post_tagsCollection | null;
 }
 

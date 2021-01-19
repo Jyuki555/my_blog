@@ -35,7 +35,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "typegen": "apollo client:codegen --target=typescript --globalTypesFile=src/types/globalTypes.ts",
-    "typegen:watch": "apollo client:codegen --target=typescript --globalTypesFile=src/types/globalTypes.ts --watch "
+    "typegen:watch": "apollo client:codegen --target=typescript --globalTypesFile=src/types/globalTypes.ts --watch ",
+    "typegen:download": "apollo client:download-schema src/types/schema.json"
   },
   "eslintConfig": {
     "extends": [

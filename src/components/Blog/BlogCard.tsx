@@ -13,11 +13,11 @@ export const BlogCard: React.FC<Props> = ({ content }) => {
   if (!content) {
     return null;
   }
-  const { title, thumbnail, tagsCollection, dateTime } = content;
+  const { title, thumbnail, tagsCollection, dateTime, slug } = content;
 
   return (
     <Card>
-      <CardActionArea to="/">
+      <CardActionArea to={"/blog/" + slug}>
         <CardMedia src={thumbnail?.url ? thumbnail.url : ""} />
         <CardDateTime>{dayjs(dateTime).format("YYYY年MM月DD日")}</CardDateTime>
         <CardTitle>{title}</CardTitle>
