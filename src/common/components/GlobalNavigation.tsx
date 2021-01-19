@@ -16,7 +16,7 @@ const Navigation = [
     IconComponent: LocalAirportIcon,
   },
   {
-    path: "/",
+    path: "/product",
     key: "product",
     text: "ぷろだくと",
     IconComponent: SettingsIcon,

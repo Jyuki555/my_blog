@@ -18,6 +18,13 @@ const routeDefs: RouteDef[] = [
     component: React.lazy(() => import("./components/Blog/BlogContainer")),
   },
   {
+    key: "product",
+    path: "/product",
+    component: React.lazy(
+      () => import("./components/Product/ProductContainer")
+    ),
+  },
+  {
     key: "profile",
     path: "/",
     component: React.lazy(
