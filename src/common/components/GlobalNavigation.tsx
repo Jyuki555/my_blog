@@ -24,8 +24,16 @@ const Navigation = [
 ];
 
 const SNS = [
-  { path: "/", key: "github", IconComponent: GitHubIcon },
-  { path: "/", key: "twitter", IconComponent: TwitterIcon },
+  {
+    path: "https://github.com/Jyuki555",
+    key: "github",
+    IconComponent: GitHubIcon,
+  },
+  {
+    path: "https://twitter.com/Jyuki1234567890",
+    key: "twitter",
+    IconComponent: TwitterIcon,
+  },
 ];
 
 export const GlobalNavigation = () => {
@@ -42,7 +50,9 @@ export const GlobalNavigation = () => {
       <SNSGroup>
         {SNS.map((sns) => (
           <NavigationListItem key={sns.key}>
-            <sns.IconComponent />
+            <NavigationListItemAnchor href={sns.path} target="_blank">
+              <sns.IconComponent />
+            </NavigationListItemAnchor>
           </NavigationListItem>
         ))}
       </SNSGroup>
@@ -63,6 +73,14 @@ const NavigationListItem = styled.li`
   transition: 0.4s;
   font-size: 1.5rem;
   font-weight: bold;
+  color: #8391a2;
+  &:hover {
+    color: #cedce4;
+  }
+`;
+
+const NavigationListItemAnchor = styled.a`
+  transition: 0.4s;
   color: #8391a2;
   &:hover {
     color: #cedce4;

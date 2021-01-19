@@ -1,11 +1,12 @@
 import React from "react";
 import MediaQuery from "../../assets/MediaQuery";
 import { GlobalNavigation } from "./GlobalNavigation";
+import { GlobalTitle } from "./GlobalTitle";
 import styled from "styled-components";
 
 export const GlobalSideBar: React.FC = () => (
   <Container>
-    <Title>jyuki.dev</Title>
+    <GlobalTitle />
     <Divider />
     <GlobalNavigation />
   </Container>
@@ -21,15 +22,6 @@ const Container = styled.div`
     display: none;
   }
 }
-`;
-
-const Title = styled.h2`
-  letter-spacing: 1.5px;
-  margin: 16px 0px;
-  font-family: impact;
-  font-weight: bold;
-  font-size: 2rem;
-  color: white;
 `;
 
 const Divider = styled.hr`
