@@ -15,15 +15,6 @@ export const BlogContent: React.FC<Props> = ({ postCollection }) => {
       {items.map((item, idx) => (
         <BlogCard key={idx} content={item} />
       ))}
-      {items.map((item, idx) => (
-        <BlogCard key={idx} content={item} />
-      ))}
-      {items.map((item, idx) => (
-        <BlogCard key={idx} content={item} />
-      ))}
-      {items.map((item, idx) => (
-        <BlogCard key={idx} content={item} />
-      ))}
     </BlogCardConttainer>
   );
 };

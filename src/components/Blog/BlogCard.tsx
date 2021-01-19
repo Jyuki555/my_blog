@@ -1,5 +1,5 @@
 import React from "react";
-import { BlogTagContainer } from "./BlogTagContainer";
+import { BlogTagCollection } from "./BlogTagCollection";
 import { GetBlogQuery_postCollection_items } from "./__generated__/GetBlogQuery";
 import { Link } from "react-router-dom";
 import dayjs from "dayjs";
@@ -21,10 +21,12 @@ export const BlogCard: React.FC<Props> = ({ content }) => {
         <CardMedia src={thumbnail?.url ? thumbnail.url : ""} />
         <CardDateTime>{dayjs(dateTime).format("YYYY年MM月DD日")}</CardDateTime>
         <CardTitle>{title}</CardTitle>
+        <CardTagArea>
+          {tagsCollection && (
+            <BlogTagCollection tagsCollection={tagsCollection} />
+          )}
+        </CardTagArea>
       </CardActionArea>
-      <CardTagActionArea>
-        {tagsCollection && <BlogTagContainer tagsCollection={tagsCollection} />}
-      </CardTagActionArea>
     </Card>
   );
 };
@@ -54,6 +56,6 @@ const CardMedia = styled.img`
   width: 100%;
 `;
 
-const CardTagActionArea = styled.div`
+const CardTagArea = styled.div`
   padding: 0px 16px;
 `;

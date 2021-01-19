@@ -3,7 +3,7 @@ import { GetBlogViewQuery_post } from "./__generated__/GetBlogViewQuery";
 import { Options } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BlogTagContainer } from "./BlogTagContainer";
+import { BlogTagCollection } from "./BlogTagCollection";
 import dayjs from "dayjs";
 import MediaQuery from "../../assets/MediaQuery";
 import styled from "styled-components";
@@ -58,7 +58,7 @@ export const BlogViewContent: React.FC<Props> = ({ post }) => {
     <Content>
       <Title>{title}</Title>
       <DateTime>{dayjs(dateTime).format("YYYY年MM月DD日")}</DateTime>
-      {tagsCollection && <BlogTagContainer tagsCollection={tagsCollection} />}
+      {tagsCollection && <BlogTagCollection tagsCollection={tagsCollection} />}
       {documentToReactComponents(post.content?.json, RICHTEXT_OPTIONS)}
     </Content>
   );
